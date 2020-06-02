@@ -11,6 +11,7 @@
   padding: 1em 0;
   text-transform: uppercase;
   margin-bottom: .5em;
+  line-height: 1.15;
 }
 
 .Sidebar__contenedor_parametro {
@@ -19,12 +20,16 @@
   flex-direction: column;
 }
 
+.Sidebar__semana {
+  font-size: .6em;
+}
+
 .Sidebar__label {
   font-size: .6em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, .65);
   font-weight: 600;
-  margin-bottom: .25em;
+  margin-bottom: .75em;
 }
 
 .Sidebar__selector {

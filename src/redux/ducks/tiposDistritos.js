@@ -1,4 +1,4 @@
-const seleccionarTipo = 'distritos/seleccionar_tipo'
+const seleccionarTipo = 'tiposDistritos/seleccionar_tipo'
 
 const defaultState = {
   urbanosSeleccionados: true,
