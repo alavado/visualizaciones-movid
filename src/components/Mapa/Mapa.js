@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import ReactMapGL, { Source, Layer } from 'react-map-gl'
+import ReactMapGL from 'react-map-gl'
 import mapStyle from './mapStyle.json'
 import './Mapa.css'
-import geoJSONDistritos from '../../data/geojson/distritos.json'
-import geoJSONRegiones from '../../data/geojson/regiones.json'
-import geoJSONComunas from '../../data/geojson/comunas.json'
+import CapaDistritos from './CapaDistritos'
 
 const Mapa = () => {
 
@@ -34,19 +32,7 @@ const Mapa = () => {
         mapStyle={mapStyle}
         onViewportChange={cambioEnElViewport}
       >
-        <Source
-          id="capa-datos-distritos"
-          type="geojson"
-          data={geoJSONDistritos}
-        >
-          <Layer
-            id="distritos-fill"
-            type="fill"
-            paint={{
-              'fill-color': 'rgba(255, 255, 255, .5)'
-            }}
-          />
-        </Source>
+        <CapaDistritos />
       </ReactMapGL>
     </div>
   )
