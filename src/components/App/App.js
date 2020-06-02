@@ -1,12 +1,13 @@
 import React from 'react'
 import './App.css'
 import Mapa from '../Mapa/Mapa'
+import Header from '../Header'
 
 const App = () => {
   
   return (
     <div className="App">
-      <h1>Mapa Movid</h1>
+      <Header />
       <Mapa />
     </div>
   )

@@ -7,7 +7,7 @@ const CapaDistritos = () => {
 
   const geoJSONProcesado = useMemo(() => ({
     ...geoJSONDistritos,
-    features: geoJSONDistritos.features.map(f => ({
+    features: geoJSONDistritos.features.filter(f => f.properties.REGION === '13').map(f => ({
       ...f,
       properties: {
         ...f.properties,
