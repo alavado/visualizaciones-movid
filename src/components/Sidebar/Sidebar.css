@@ -1,5 +1,10 @@
 .Sidebar {
   width: 12em;
-  background-color: #103D64;
+  background-color: #262a2c;
   color: rgba(255, 255, 255, .95);
+  padding: .65em;
+}
+
+.Sidebar__titulo {
+  font-size: .8em;
 }

@@ -2,19 +2,25 @@ import React, { useMemo } from 'react'
 import { Source, Layer } from 'react-map-gl'
 import './CapaDistritos.css'
 import geoJSONDistritos from '../../../data/geojson/distritos.json'
+import { useSelector } from 'react-redux'
 
 const CapaDistritos = () => {
 
-  const geoJSONProcesado = useMemo(() => ({
-    ...geoJSONDistritos,
-    features: geoJSONDistritos.features.filter(f => f.properties.REGION === '13').map(f => ({
-      ...f,
-      properties: {
-        ...f.properties,
-        x: Math.random()
-      }
-    }))
-  }), [])
+  const { codigoRegion } = useSelector(state => state.region)
+
+  const geoJSONProcesado = useMemo(() => {
+    const codigo = codigoRegion.toString()
+    return {
+      ...geoJSONDistritos,
+      features: geoJSONDistritos.features.filter(f => f.properties.REGION === codigo).map(f => ({
+        ...f,
+        properties: {
+          ...f.properties,
+          x: Math.random()
+        }
+      }))
+    }
+  }, [codigoRegion])
 
   return (
     <Source

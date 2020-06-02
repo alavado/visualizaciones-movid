@@ -3,8 +3,6 @@ import ReactMapGL from 'react-map-gl'
 import mapStyle from './mapStyle.json'
 import './Mapa.css'
 import CapaDistritos from './CapaDistritos'
-import { useDispatch } from 'react-redux'
-import { toggleSidebarSecundaria } from '../../redux/ducks/sidebars'
 
 const Mapa = () => {
 
@@ -18,8 +16,6 @@ const Mapa = () => {
     zoom: 11,
     altitude: 1.5,
   })
-
-  const dispatch = useDispatch()
 
   const cambioEnElViewport = vp => {
     setVp({
@@ -35,7 +31,6 @@ const Mapa = () => {
         {...vp}
         mapStyle={mapStyle}
         onViewportChange={cambioEnElViewport}
-        onClick={() => dispatch(toggleSidebarSecundaria())}
       >
         <CapaDistritos />
       </ReactMapGL>
