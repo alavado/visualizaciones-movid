@@ -1,10 +1,55 @@
 .Sidebar {
   width: 12em;
-  background-color: #262a2c;
+  background-color: #202a40;
   color: rgba(255, 255, 255, .95);
-  padding: .65em;
+  padding: .65em 1.3em .65em .65em;
 }
 
 .Sidebar__titulo {
+  font-size: .7em;
+  font-weight: 600;
+  padding: 1em 0;
+  text-transform: uppercase;
+  margin-bottom: .5em;
+}
+
+.Sidebar__contenedor_parametro {
+  margin-bottom: 1.25em;
+  display: flex;
+  flex-direction: column;
+}
+
+.Sidebar__label {
+  font-size: .6em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .65);
+  font-weight: 600;
+  margin-bottom: .25em;
+}
+
+.Sidebar__selector {
+  padding: .25em;
   font-size: .8em;
+  background-color: #202a40;
+  color: rgba(255, 255, 255, .95);
+  margin-top: .25em;
+  border-radius: .25em;
+  cursor: pointer;
+}
+
+.Sidebar__opcion {
+  background-color: #202a40;
+  color: rgba(255, 255, 255, .95);
+}
+
+.Sidebar__label_checkbox {
+  font-size: .6em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .95);
+  font-weight: 600;
+  margin-bottom: .25em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
 }

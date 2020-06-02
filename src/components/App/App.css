@@ -1,12 +1,17 @@
 * {
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App {
   display: flex;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
   flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App__contenedor_principal {

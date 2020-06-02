@@ -7,20 +7,27 @@ import { useSelector } from 'react-redux'
 const CapaDistritos = () => {
 
   const { codigoRegion } = useSelector(state => state.region)
+  const { ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados } = useSelector(state => state.distritos)
 
   const geoJSONProcesado = useMemo(() => {
     const codigo = codigoRegion.toString()
     return {
       ...geoJSONDistritos,
-      features: geoJSONDistritos.features.filter(f => f.properties.REGION === codigo).map(f => ({
-        ...f,
-        properties: {
-          ...f.properties,
-          x: Math.random()
-        }
-      }))
+      features: geoJSONDistritos
+        .features
+        .filter(f => f.properties.REGION === codigo)
+        .filter(f => ruralesSeleccionados || (!ruralesSeleccionados && f.properties.TIPO_DISTR !== 'RURAL'))
+        .filter(f => urbanosSeleccionados || (!urbanosSeleccionados && f.properties.TIPO_DISTR !== 'URBANO'))
+        .filter(f => mixtosSeleccionados || (!mixtosSeleccionados && f.properties.TIPO_DISTR !== 'MIXTO'))
+        .map(f => ({
+          ...f,
+          properties: {
+            ...f.properties,
+            x: Math.random()
+          }
+        }))
     }
-  }, [codigoRegion])
+  }, [codigoRegion, ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados])
 
   return (
     <Source
