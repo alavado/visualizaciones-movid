@@ -1,0 +1,9 @@
+.OtraSidebar {
+  width: 0em;
+  overflow: hidden;
+  transition: all .25s ease-in-out;
+}
+
+.OtraSidebar--abierta {
+  width: 15em;
+}
