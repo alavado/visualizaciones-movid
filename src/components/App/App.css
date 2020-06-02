@@ -18,3 +18,14 @@ body {
   display: flex;
   flex: 1;
 }
+
+.App__contenedor_central {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.App__contenedor_mapa {
+  display: flex;
+  flex: 1;
+}

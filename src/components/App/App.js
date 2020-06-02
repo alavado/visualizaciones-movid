@@ -4,6 +4,7 @@ import Mapa from '../Mapa/Mapa'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
 import OtraSidebar from '../OtraSidebar'
+import HeaderMapa from '../HeaderMapa'
 
 const App = () => {
   
@@ -12,8 +13,13 @@ const App = () => {
       <Header />
       <main className="App__contenedor_principal">
         <Sidebar />
-        <Mapa />
-        <OtraSidebar />
+        <div className="App__contenedor_central">
+          <HeaderMapa />
+          <div className="App__contenedor_mapa">
+            <Mapa />
+            <OtraSidebar />
+          </div>
+        </div>
       </main>
     </div>
   )

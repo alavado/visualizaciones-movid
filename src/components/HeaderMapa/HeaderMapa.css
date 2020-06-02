@@ -1,0 +1,12 @@
+.HeaderMapa {
+  box-shadow: 0 .05em .1em rgba(0, 0, 0, .1);
+  z-index: 2;
+  padding: .75em;
+}
+
+.HeaderMapa__nombre_region {
+  font-size: .65em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, .95);
+}

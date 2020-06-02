@@ -2,13 +2,12 @@
   width: 12em;
   background-color: #202a40;
   color: rgba(255, 255, 255, .95);
-  padding: .65em 1.3em .65em .65em;
+  padding: .75em 1.3em .65em .65em;
 }
 
 .Sidebar__titulo {
   font-size: .7em;
   font-weight: 600;
-  padding: 1em 0;
   text-transform: uppercase;
   margin-bottom: .5em;
   line-height: 1.15;

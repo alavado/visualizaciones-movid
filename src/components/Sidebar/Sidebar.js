@@ -16,11 +16,6 @@ const Sidebar = () => {
     <div className="Sidebar">
       <h1 className="Sidebar__titulo">Parámetros de la visualización</h1>
       <div className="Sidebar__contenedor_parametro">
-        <label className="Sidebar__label">Semana</label>
-        <div className="Sidebar__semana">lunes 01/06 al domingo 08/06</div>
-        <input type="range" />
-      </div>
-      <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Región</label>
         <select
           value={codigoRegion}
@@ -29,6 +24,7 @@ const Sidebar = () => {
         >
           {demograficosRegiones.map(region => (
             <option
+              key={`Sidebar-opcion-region-${region.codigo}`}
               className="Sidebar__opcion"
               value={region.codigo}
             >
@@ -63,6 +59,11 @@ const Sidebar = () => {
           />
             Mixtos
         </label>
+      </div>
+      <div className="Sidebar__contenedor_parametro">
+        <label className="Sidebar__label">Semana</label>
+        <div className="Sidebar__semana">lunes 01/06 al domingo 08/06</div>
+        <input type="range" />
       </div>
     </div>
   )

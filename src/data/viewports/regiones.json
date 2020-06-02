@@ -1,0 +1,98 @@
+[
+  {
+    "codigo": 15,
+    "zoom": 7.6,
+    "latitude": -18.41,
+    "longitude": -69.82
+  },
+  {
+    "codigo": 1,
+    "zoom": 7,
+    "latitude": -20.33,
+    "longitude": -69.54
+  },
+  {
+    "codigo": 2,
+    "zoom": 6.11,
+    "latitude": -23.68,
+    "longitude": -69.36
+  },
+  {
+    "codigo": 3,
+    "zoom": 6.36,
+    "latitude": -27.48,
+    "longitude": -69.97
+  },
+  {
+    "codigo": 4,
+    "zoom": 6.7,
+    "latitude": -30.74,
+    "longitude": -70.87
+  },
+  {
+    "codigo": 5,
+    "zoom": 7.33,
+    "latitude": -33.01,
+    "longitude": -71.03
+  },
+  {
+    "codigo": 13,
+    "zoom": 7.77,
+    "latitude": -33.63,
+    "longitude": -70.75
+  },
+  {
+    "codigo": 6,
+    "zoom": 7.82,
+    "latitude": -34.43,
+    "longitude": -71.1
+  },
+  {
+    "codigo": 7,
+    "zoom": 7.34,
+    "latitude": -35.65,
+    "longitude": -71.59
+  },
+  {
+    "codigo": 16,
+    "zoom": 7.82,
+    "latitude": -36.63,
+    "longitude": -72.02
+  },
+  {
+    "codigo": 8,
+    "zoom": 7.12,
+    "latitude": -37.56,
+    "longitude": -72.41
+  },
+  {
+    "codigo": 9,
+    "zoom": 7.15,
+    "latitude": -38.65,
+    "longitude": -72.37
+  },
+  {
+    "codigo": 14,
+    "zoom": 7.56,
+    "latitude": -40.03,
+    "longitude": -72.71
+  },
+  {
+    "codigo": 10,
+    "zoom": 6.2,
+    "latitude": -42.22,
+    "longitude": -73.01
+  },
+  {
+    "codigo": 11,
+    "zoom": 5.59,
+    "latitude": -46.61,
+    "longitude": -73.42
+  },
+  {
+    "codigo": 12,
+    "zoom": 5.1,
+    "latitude": -52.55,
+    "longitude": -71.27
+  }
+]
