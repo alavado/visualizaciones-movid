@@ -26,6 +26,7 @@ const CapaDistritos = () => {
         id="distritos-fill"
         type="fill"
         paint={{
+          "fill-opacity": 1,
           "fill-color": {
             property: 'x',
             stops: [

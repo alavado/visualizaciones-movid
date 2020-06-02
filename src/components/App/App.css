@@ -8,3 +8,8 @@
   font-family: 'Montserrat', sans-serif;
   flex-direction: column;
 }
+
+.App__contenedor_principal {
+  display: flex;
+  flex: 1;
+}
