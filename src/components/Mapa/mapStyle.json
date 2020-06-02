@@ -1,0 +1,100 @@
+{
+  "version": 8,
+  "name": "Dark Matter",
+  "language": "ES",
+  "metadata": {
+    "mapbox:autocomposite": false,
+    "mapbox:groups": {
+      "101da9f13b64a08fa4b6ac1168e89e5f": {
+        "collapsed": false,
+        "name": "Places"
+      },
+      "a14c9607bc7954ba1df7205bf660433f": {"name": "Boundaries"},
+      "b6371a3f2f5a9932464fa3867530a2e5": {
+        "collapsed": false,
+        "name": "Transportation"
+      }
+    },
+    "mapbox:type": "template",
+    "openmaptiles:mapbox:owner": "openmaptiles",
+    "openmaptiles:mapbox:source:url": "mapbox://openmaptiles.4qljc88t",
+    "openmaptiles:version": "3.x"
+  },
+  "sources": {
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://api.maptiler.com/tiles/v3/tiles.json?key=9sVe3g7n8Rv4JJBJXlbK",
+      "attribution": "<a href='https://www.maptiler.com/copyright/' target='_blank' rel='noopener noreferrer'>© MapTiler</a> <a href='https://www.openstreetmap.org/copyright' target='_blank' rel='noopener noreferrer'>© OpenStreetMap contributors</a>"
+    }
+  },
+  "sprite": "https://openmaptiles.github.io/dark-matter-gl-style/sprite",
+  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=9sVe3g7n8Rv4JJBJXlbK",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "rgb(12,12,12)"}
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "filter": [
+        "all",
+        ["==", "$type", "Polygon"],
+        ["!=", "brunnel", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-antialias": false, "fill-color": "rgb(27 ,27 ,29)"}
+    },
+    {
+      "id": "water_name",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "water_name",
+      "filter": ["==", "$type", "LineString"],
+      "layout": {
+        "symbol-placement": "line",
+        "symbol-spacing": 500,
+        "text-field": "{name:es}\n{name:nonlatin}",
+        "text-font": ["Metropolis Medium Italic", "Noto Sans Italic"],
+        "text-rotation-alignment": "map",
+        "text-size": 12
+      },
+      "paint": {
+        "text-color": "hsla(0, 0%, 0%, 0.7)",
+        "text-halo-color": "hsl(0, 0%, 27%)"
+      }
+    },
+    {
+      "id": "place_country_major",
+      "type": "symbol",
+      "metadata": {"mapbox:group": "101da9f13b64a08fa4b6ac1168e89e5f"},
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "maxzoom": 6,
+      "filter": [
+        "all",
+        ["==", "$type", "Point"],
+        ["<=", "rank", 1],
+        ["==", "class", "country"],
+        ["has", "iso_a2"]
+      ],
+      "layout": {
+        "text-anchor": "center",
+        "text-field": "{name:es}",
+        "text-font": ["Metropolis Regular", "Noto Sans Regular"],
+        "text-size": {"base": 1.4, "stops": [[0, 10], [3, 12], [4, 14]]},
+        "text-transform": "uppercase",
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "rgb(101,101,101)",
+        "text-halo-color": "rgba(0,0,0,0.7)",
+        "text-halo-width": 1.4
+      }
+    }
+  ],
+  "id": "dark-matter"
+}
