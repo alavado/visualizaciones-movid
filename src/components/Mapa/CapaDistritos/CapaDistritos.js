@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 const CapaDistritos = () => {
 
   const { codigoRegion } = useSelector(state => state.region)
+  const { colores, valores: valoresEscala } = useSelector(state => state.escala)
   const { ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados } = useSelector(state => state.tiposDistritos)
 
   const geoJSONProcesado = useMemo(() => {
@@ -44,15 +45,8 @@ const CapaDistritos = () => {
           "fill-opacity": 1,
           "fill-color": {
             property: 'x',
-            stops: [
-              [0, '#FFFFCE'],
-              [0.25, '#C8E8B6'],
-              [0.35, '#83CCBB'],
-              [0.65, '#48B6C2'],
-              [0.85, '#3180B6'],
-              [1, '#273891']
-            ]
-          }//['to-color', ['at', 0, ['get', 'colores']]],
+            stops: colores.map((color, i) => [valoresEscala[i], color])
+          }
         }}
       />
       <Layer

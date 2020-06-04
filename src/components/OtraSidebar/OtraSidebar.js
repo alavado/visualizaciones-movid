@@ -9,7 +9,7 @@ const OtraSidebar = () => {
 
   return (
     <div className={`OtraSidebar${sidebarSecundariaAbierta ? ' OtraSidebar--abierta' : ''}`}>
-      <h1>{nombreRegion}</h1>
+      {/* <h1>{nombreRegion}</h1> */}
     </div>
   )
 }

@@ -6,11 +6,12 @@
 }
 
 .Sidebar__titulo {
-  font-size: .7em;
+  font-size: .65em;
   font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: .5em;
-  line-height: 1.15;
+  margin-bottom: 1.5em;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, .9);
 }
 
 .Sidebar__contenedor_parametro {
@@ -20,7 +21,8 @@
 }
 
 .Sidebar__semana {
-  font-size: .6em;
+  font-size: .7em;
+  font-weight: 600;
 }
 
 .Sidebar__label {
@@ -33,12 +35,13 @@
 
 .Sidebar__selector {
   padding: .25em;
-  font-size: .8em;
+  font-size: .7em;
   background-color: #202a40;
   color: rgba(255, 255, 255, .95);
   margin-top: .25em;
   border-radius: .25em;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .Sidebar__opcion {
@@ -47,8 +50,7 @@
 }
 
 .Sidebar__label_checkbox {
-  font-size: .6em;
-  text-transform: uppercase;
+  font-size: .7em;
   color: rgba(255, 255, 255, .95);
   font-weight: 600;
   margin-bottom: .25em;

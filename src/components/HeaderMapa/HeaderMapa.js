@@ -8,7 +8,10 @@ const HeaderMapa = () => {
 
   return (
     <div className="HeaderMapa">
-      <h2 className="HeaderMapa__nombre_region">{nombreRegion}</h2>
+      <h2 className="HeaderMapa__nombre_region">
+        {nombreRegion}
+        <span className="HeaderMapa__subtitulo">Semana del lunes 01/06 al domingo 08/06</span>
+      </h2>
     </div>
   )
 }

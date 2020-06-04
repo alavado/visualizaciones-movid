@@ -62,7 +62,7 @@ const Sidebar = () => {
       </div>
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Semana</label>
-        <div className="Sidebar__semana">lunes 01/06 al domingo 08/06</div>
+        <div className="Sidebar__semana">Lunes 1 de junio</div>
         <input type="range" />
       </div>
     </div>
