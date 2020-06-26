@@ -2,6 +2,7 @@ const cambiar = 'escala/cambiar'
 
 const defaultState = {
   colores: [
+    '#cecece',
     '#FFFFCE',
     '#C8E8B6',
     '#83CCBB',
@@ -9,7 +10,7 @@ const defaultState = {
     '#3180B6',
     '#273891'
   ],
-  valores: [0, 2, 4, 6, 8, 10]
+  valores: [-1, 0, 2, 4, 6, 8, 10]
 }
 
 export default function reducer(state = defaultState, action = {}) {

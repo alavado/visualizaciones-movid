@@ -5,6 +5,7 @@ import { regionSeleccionada } from '../../redux/ducks/region'
 import { distritosUrbanosSeleccionados, distritosRuralesSeleccionados, distritosMixtosSeleccionados } from '../../redux/ducks/tiposDistritos'
 import { seleccionarSemana } from '../../redux/ducks/fecha'
 import { seleccionarCriterio, criterio0326, criterio0530 } from '../../redux/ducks/criterio'
+import { primeraSemana, ultimaSemana } from '../../scripts/constantesMOVID'
 import './Sidebar.css'
 import './range.css'
 
@@ -63,8 +64,8 @@ const Sidebar = () => {
         <div className="Sidebar__semana">Lunes 1 de junio</div>
         <input
           type="range"
-          min={18}
-          max={23}
+          min={primeraSemana}
+          max={ultimaSemana}
           value={semana}
           onChange={e => dispatch(seleccionarSemana(e.target.value))}
         />

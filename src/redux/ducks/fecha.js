@@ -1,7 +1,9 @@
+import { ultimaSemana } from '../../scripts/constantesMOVID'
+
 const retroceder = 'fecha/retroceder'
 const seleccionar = 'fecha/seleccionar'
 
-export default function reducer(state = { fecha: 0, semana: 18 }, action = {}) {
+export default function reducer(state = { fecha: 0, semana: ultimaSemana }, action = {}) {
   switch (action.type) {
     case retroceder:
       return {

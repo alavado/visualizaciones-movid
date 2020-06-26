@@ -42,7 +42,6 @@ const CapaDistritos = () => {
           "fill-opacity": 1,
           "fill-color": {
             property: propiedadGeoJSON,
-            // property: ['get', 'obs_cnt', ['at', 0, ['get', 'movid']]],
             stops: colores.map((color, i) => [valoresEscala[i], color])
           }
         }}

@@ -1,5 +1,6 @@
 const fs = require('fs')
 const geoJSONDistritos = require('../data/geojson/distritos.json')
+const { primeraSemana, ultimaSemana } = require('./constantesMOVID')
 
 fs.readFile('../data/movid/movid19_freq_c17.csv', (err, data) => {
   if (err) {
@@ -26,6 +27,14 @@ fs.readFile('../data/movid/movid19_freq_c17.csv', (err, data) => {
         ...feature,
         properties: {
           ...feature.properties,
+          ...Array(ultimaSemana - primeraSemana + 1)
+            .fill(0)
+            .reduce((obj, n, i) => ({
+              ...obj,
+              [`movid-obs-${i + primeraSemana}`]: -1,
+              [`movid-sosp0326-${i + primeraSemana}`]: -1,
+              [`movid-sosp0530-${i + primeraSemana}`]: -1,
+            }), {}),
           ...datosMOVID
             .filter(d => d.codigoDistrito === feature.properties.CODIGO_C17)
             .reduce((obj, d) => ({

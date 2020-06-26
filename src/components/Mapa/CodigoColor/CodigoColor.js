@@ -8,10 +8,10 @@ const CodigoColor = () => {
 
   return (
     <div className="CodigoColor">
-      {colores.map((color, i) => (
+      {colores.slice(1).map((color, i) => (
         <div className="CodigoColor__color" key={`codigo-color-${color}`}>
           <div className="CodigoColor__cuadrito" style={{ backgroundColor: color }} />
-          <div className="CodigoColor__valor">{valores[i]}</div>
+          <div className="CodigoColor__valor">{valores[i + 1]}</div>
         </div>
       ))}
     </div>
