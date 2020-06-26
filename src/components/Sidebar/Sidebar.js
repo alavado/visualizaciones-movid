@@ -46,7 +46,7 @@ const Sidebar = () => {
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Semana epidemiológica</label>
         <div className="Sidebar__semana">
-          {semana}: del {fechaInicioSemana} al {fechaTerminoSemana}
+          Semana {semana}: {fechaInicioSemana} – {fechaTerminoSemana}
         </div>
         <input
           type="range"

@@ -7,6 +7,7 @@ import CodigoColor from './CodigoColor'
 import { useSelector } from 'react-redux'
 import viewportsRegiones from '../../data/viewports/regiones.json'
 import { easeCubic } from 'd3-ease'
+import CapaComunas from './CapaComunas'
 
 const Mapa = () => {
 
@@ -54,6 +55,7 @@ const Mapa = () => {
         onViewportChange={cambioEnElViewport}
       >
         <CapaDistritos />
+        <CapaComunas />
       </ReactMapGL>
     </div>
   )

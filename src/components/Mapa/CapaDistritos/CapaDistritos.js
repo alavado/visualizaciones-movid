@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { Source, Layer } from 'react-map-gl'
 import './CapaDistritos.css'
 import geoJSONDistritos from '../../../data/geojson/distritos_movid.json'
-import { criterio0326, criterio0530 } from '../../../redux/ducks/criterio'
+import { criterio0326 } from '../../../redux/ducks/criterio'
 import { useSelector } from 'react-redux'
 
 const CapaDistritos = () => {
@@ -50,7 +50,7 @@ const CapaDistritos = () => {
         id="distritos-line"
         type="line"
         paint={{
-          'line-color': '#cecece',
+          'line-color': '#a9a9a9',
           'line-width': .5
         }}
       />
