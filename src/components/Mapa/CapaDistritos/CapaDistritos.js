@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import { Source, Layer } from 'react-map-gl'
 import './CapaDistritos.css'
 import geoJSONDistritos from '../../../data/geojson/distritos_movid.json'
+import { criterio0326, criterio0530 } from '../../../redux/ducks/criterio'
 import { useSelector } from 'react-redux'
 
 const CapaDistritos = () => {
@@ -10,6 +11,8 @@ const CapaDistritos = () => {
   const { semana } = useSelector(state => state.fecha)
   const { colores, valores: valoresEscala } = useSelector(state => state.escala)
   const { ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados } = useSelector(state => state.tiposDistritos)
+  const { criterio } = useSelector(state => state.criterio)
+  const propiedadGeoJSON = `movid-${criterio === criterio0326 ? 'sosp0326' : 'sosp0530'}-${semana}`
 
   const geoJSONProcesado = useMemo(() => {
     const codigo = codigoRegion.toString()
@@ -38,7 +41,7 @@ const CapaDistritos = () => {
         paint={{
           "fill-opacity": 1,
           "fill-color": {
-            property: `movid-sosp0326-${semana}`,
+            property: propiedadGeoJSON,
             // property: ['get', 'obs_cnt', ['at', 0, ['get', 'movid']]],
             stops: colores.map((color, i) => [valoresEscala[i], color])
           }

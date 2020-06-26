@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { regionSeleccionada } from '../../redux/ducks/region'
 import { distritosUrbanosSeleccionados, distritosRuralesSeleccionados, distritosMixtosSeleccionados } from '../../redux/ducks/tiposDistritos'
 import { seleccionarSemana } from '../../redux/ducks/fecha'
+import { seleccionarCriterio, criterio0326, criterio0530 } from '../../redux/ducks/criterio'
 import './Sidebar.css'
 import './range.css'
 
@@ -11,12 +12,34 @@ const Sidebar = () => {
 
   const { codigoRegion } = useSelector(state => state.region)
   const { semana } = useSelector(state => state.fecha)
+  const { criterio } = useSelector(state => state.criterio)
   const { ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados } = useSelector(state => state.tiposDistritos)
   const dispatch = useDispatch()
 
   return (
     <div className="Sidebar">
       <h1 className="Sidebar__titulo">Parámetros</h1>
+      <div className="Sidebar__contenedor_parametro">
+        <label className="Sidebar__label">Criterio de sospecha</label>
+        <select
+          value={criterio}
+          onChange={e => dispatch(seleccionarCriterio(e.target.value))}
+          className="Sidebar__selector"
+        >
+          <option
+            className="Sidebar__opcion"
+            value={criterio0326}
+          >
+            {criterio0326}
+          </option>
+          <option
+            className="Sidebar__opcion"
+            value={criterio0530}
+          >
+            {criterio0530}
+          </option>
+        </select>
+      </div>
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Región</label>
         <select
@@ -34,6 +57,17 @@ const Sidebar = () => {
             </option>
           ))}
         </select>
+      </div>
+      <div className="Sidebar__contenedor_parametro">
+        <label className="Sidebar__label">Semana</label>
+        <div className="Sidebar__semana">Lunes 1 de junio</div>
+        <input
+          type="range"
+          min={18}
+          max={23}
+          value={semana}
+          onChange={e => dispatch(seleccionarSemana(e.target.value))}
+        />
       </div>
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Tipos de distritos</label>
@@ -61,17 +95,6 @@ const Sidebar = () => {
           />
             Mixtos
         </label>
-      </div>
-      <div className="Sidebar__contenedor_parametro">
-        <label className="Sidebar__label">Semana</label>
-        <div className="Sidebar__semana">Lunes 1 de junio</div>
-        <input
-          type="range"
-          min={18}
-          max={24}
-          value={semana}
-          onChange={e => dispatch(seleccionarSemana(e.target.value))}
-        />
       </div>
     </div>
   )

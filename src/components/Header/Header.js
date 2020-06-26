@@ -4,7 +4,7 @@ import './Header.css'
 const Header = () => {
   return (
     <header className="Header">
-      <h1 className="Header__titulo">Visualización Movid-19</h1>
+      <h1 className="Header__titulo">Casos Sospechosos encuesta Movid-19</h1>
     </header>
   )
 }
