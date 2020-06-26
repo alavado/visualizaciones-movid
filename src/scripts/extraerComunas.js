@@ -1,5 +1,6 @@
 const fs = require('fs')
 const geoJSONDistritos = require('../data/geojson/distritos.json')
+const demograficosComunas = require('../data/demografia/comunas.json')
 const turf = require('turf')
 
 const unirDistritos = distritos => {
@@ -40,7 +41,8 @@ const geoJSONComunas = {
     return {
       ...unirDistritos(comunas[c]),
       properties: {
-        codigo: Number(c)
+        codigo: Number(c),
+        codigoRegion: Number(demograficosComunas.find(comuna => comuna.codigo === c).region)
       }
     }
   })

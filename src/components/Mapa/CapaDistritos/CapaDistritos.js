@@ -51,7 +51,8 @@ const CapaDistritos = () => {
         type="line"
         paint={{
           'line-color': '#a9a9a9',
-          'line-width': .5
+          'line-width': .75,
+          'line-dasharray': [2, 1]
         }}
       />
     </Source>
