@@ -3,18 +3,20 @@ import demograficosRegiones from '../../data/demografia/regiones.json'
 import { useDispatch, useSelector } from 'react-redux'
 import { regionSeleccionada } from '../../redux/ducks/region'
 import { distritosUrbanosSeleccionados, distritosRuralesSeleccionados, distritosMixtosSeleccionados } from '../../redux/ducks/tiposDistritos'
+import { seleccionarSemana } from '../../redux/ducks/fecha'
 import './Sidebar.css'
 import './range.css'
 
 const Sidebar = () => {
 
   const { codigoRegion } = useSelector(state => state.region)
+  const { semana } = useSelector(state => state.fecha)
   const { ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados } = useSelector(state => state.tiposDistritos)
   const dispatch = useDispatch()
 
   return (
     <div className="Sidebar">
-      <h1 className="Sidebar__titulo">Parámetros de la visualización</h1>
+      <h1 className="Sidebar__titulo">Parámetros</h1>
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Región</label>
         <select
@@ -63,7 +65,13 @@ const Sidebar = () => {
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Semana</label>
         <div className="Sidebar__semana">Lunes 1 de junio</div>
-        <input type="range" />
+        <input
+          type="range"
+          min={18}
+          max={24}
+          value={semana}
+          onChange={e => dispatch(seleccionarSemana(e.target.value))}
+        />
       </div>
     </div>
   )

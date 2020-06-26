@@ -6,3 +6,4 @@ Para ejecutar en modo desarrollo:
 
 ### `yarn start`
 
+Pregunta JT: Hay distritos que aparecen en varias comunas, por ejemplo: 1310608

@@ -3,10 +3,10 @@ import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
 import mapStyle from './mapStyle.json'
 import './Mapa.css'
 import CapaDistritos from './CapaDistritos'
+import CodigoColor from './CodigoColor'
 import { useSelector } from 'react-redux'
 import viewportsRegiones from '../../data/viewports/regiones.json'
 import { easeCubic } from 'd3-ease'
-import CodigoColor from './CodigoColor'
 
 const Mapa = () => {
 

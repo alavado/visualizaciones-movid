@@ -2,12 +2,19 @@
   position: absolute;
   z-index: 2;
   margin: .75em;
+  background-color: white;
+  padding: .5em;
+  box-shadow: .05em .05em .1em rgba(0, 0, 0, .1);
 }
 
 .CodigoColor__color {
   display: flex;
   margin-bottom: .25em;
   align-items: center;
+}
+
+.CodigoColor__color:last-child {
+  margin-bottom: 0em;
 }
 
 .CodigoColor__cuadrito {

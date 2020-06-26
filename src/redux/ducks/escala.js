@@ -9,7 +9,7 @@ const defaultState = {
     '#3180B6',
     '#273891'
   ],
-  valores: [0, 0.25, 0.35, 0.65, 0.85, 1]
+  valores: [0, 25, 35, 65, 85, 100]
 }
 
 export default function reducer(state = defaultState, action = {}) {

@@ -1,12 +1,13 @@
 import React, { useMemo } from 'react'
 import { Source, Layer } from 'react-map-gl'
 import './CapaDistritos.css'
-import geoJSONDistritos from '../../../data/geojson/distritos.json'
+import geoJSONDistritos from '../../../data/geojson/distritos_movid.json'
 import { useSelector } from 'react-redux'
 
 const CapaDistritos = () => {
 
   const { codigoRegion } = useSelector(state => state.region)
+  const { semana } = useSelector(state => state.fecha)
   const { colores, valores: valoresEscala } = useSelector(state => state.escala)
   const { ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados } = useSelector(state => state.tiposDistritos)
 
@@ -22,13 +23,6 @@ const CapaDistritos = () => {
           (urbanosSeleccionados || f.properties.TIPO_DISTR !== 'URBANO') &&
           (mixtosSeleccionados || f.properties.TIPO_DISTR !== 'MIXTO')
         ))
-        .map(f => ({
-          ...f,
-          properties: {
-            ...f.properties,
-            x: Math.random()
-          }
-        }))
     }
   }, [codigoRegion, ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados])
 
@@ -44,7 +38,8 @@ const CapaDistritos = () => {
         paint={{
           "fill-opacity": 1,
           "fill-color": {
-            property: 'x',
+            property: `movid-sosp0326-${semana}`,
+            // property: ['get', 'obs_cnt', ['at', 0, ['get', 'movid']]],
             stops: colores.map((color, i) => [valoresEscala[i], color])
           }
         }}
@@ -53,7 +48,7 @@ const CapaDistritos = () => {
         id="distritos-line"
         type="line"
         paint={{
-          'line-color': 'rgba(255, 255, 255, 1)',
+          'line-color': '#cecece',
           'line-width': .5
         }}
       />

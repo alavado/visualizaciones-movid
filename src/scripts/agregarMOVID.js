@@ -28,7 +28,12 @@ fs.readFile('../data/movid/movid19_freq_c17.csv', (err, data) => {
           ...feature.properties,
           ...datosMOVID
             .filter(d => d.codigoDistrito === feature.properties.CODIGO_C17)
-            .reduce((obj, d) => ({...obj, [`movid-${d.semana}`]: d.obs_cnt }), {})
+            .reduce((obj, d) => ({
+              ...obj,
+              [`movid-obs-${d.semana}`]: d.obs_cnt,
+              [`movid-sosp0326-${d.semana}`]: d.sosp_minsal0326,
+              [`movid-sosp0530-${d.semana}`]: d.sosp_minsal0530,
+            }), {})
         }
       }))
     ]
