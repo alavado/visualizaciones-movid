@@ -7,6 +7,12 @@
   box-shadow: .05em .05em .1em rgba(0, 0, 0, .1);
 }
 
+.CodigoColor__titulo {
+  font-size: .6em;
+  margin-bottom: 1em;
+  max-width: 4em;
+}
+
 .CodigoColor__color {
   display: flex;
   margin-bottom: .25em;

@@ -22,7 +22,8 @@ const Mapa = () => {
     longitude: -70.75,
     altitude: 1.5,
     transitionInterpolator: new FlyToInterpolator(),
-    transitionEasing: easeCubic
+    transitionEasing: easeCubic,
+    minZoom: 5
   })
 
   useEffect(() => {

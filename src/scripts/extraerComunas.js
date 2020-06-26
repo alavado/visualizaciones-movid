@@ -1,5 +1,5 @@
-const extraerComunas = geoJSONDistritos => {
-  return geoJSONDistritos
-}
+const fs = require('fs')
+const geoJSONDistritos = require('../data/geojson/distritos.json')
+const turf = require('turf')
 
-export default extraerComunas
+console.log(geoJSONDistritos)

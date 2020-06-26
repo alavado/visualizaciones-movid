@@ -4,7 +4,7 @@ export const criterio0326 = 'Criterio MINSAL 26/03'
 export const criterio0530 = 'Criterio MINSAL 30/05'
 
 const defaultState = {
-  criterio: criterio0326
+  criterio: criterio0530
 }
 
 export default function reducer(state = defaultState, action = {}) {
