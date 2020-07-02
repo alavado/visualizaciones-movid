@@ -5,10 +5,12 @@ import { useSelector } from 'react-redux'
 const CodigoColor = () => {
 
   const { colores, valores } = useSelector(state => state.escala)
+  const { criterio } = useSelector(state => state.criterio)
 
   return (
     <div className="CodigoColor">
       <h2 className="CodigoColor__titulo">Casos sospechosos</h2>
+      <h3 className="CodigoColor__criterio">{criterio}</h3>
       {colores.map((color, i) => (
         <div
           className="CodigoColor__color"

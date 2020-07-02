@@ -11,6 +11,7 @@ const unirDistritos = distritos => {
       break
     }
     catch (err) {
+      console.log(err)
       continue
     }
   }

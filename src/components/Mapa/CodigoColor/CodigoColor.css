@@ -5,11 +5,18 @@
   background-color: white;
   padding: .5em;
   box-shadow: .05em .05em .1em rgba(0, 0, 0, .1);
+  color: rgba(0, 0, 0, .75);
 }
 
 .CodigoColor__titulo {
-  font-size: .6em;
+  font-size: .65em;
+  margin-bottom: .25em;
+}
+
+.CodigoColor__criterio {
+  font-size: .65em;
   margin-bottom: 1em;
+  font-weight: 600;
 }
 
 .CodigoColor__color {
@@ -31,5 +38,4 @@
 .CodigoColor__valor {
   font-size: .7em;
   font-weight: 600;
-  color: rgba(0, 0, 0, .75);
 }

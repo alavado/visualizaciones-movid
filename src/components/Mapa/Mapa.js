@@ -12,7 +12,7 @@ import CapaComunas from './CapaComunas'
 const Mapa = () => {
 
   const { codigoRegion } = useSelector(state => state.region)
-
+//https://api.maptiler.com/geocoding/lord%20cochrane.json?key=9sVe3g7n8Rv4JJBJXlbK&language=es&bbox=-75.6443953112,-55.61183,-66.95992,-17.5800118954
   const [vp, setVp] = useState({
     width: '100%',
     height: 'calc(100vh -2em)',

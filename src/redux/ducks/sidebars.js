@@ -1,4 +1,4 @@
-const abrir_secundaria = 'sidebars/abrir_secundaria'
+const abrirSecundaria = 'sidebars/abrirSecundaria'
 
 const defaultState = {
   sidebarSecundariaAbierta: true
@@ -6,7 +6,7 @@ const defaultState = {
 
 export default function reducer(state = defaultState, action = {}) {
   switch (action.type) {
-    case abrir_secundaria:
+    case abrirSecundaria:
       let sidebarSecundariaAbierta = true
       if (action.payload === 'cerrar') {
         sidebarSecundariaAbierta = false
@@ -25,13 +25,13 @@ export default function reducer(state = defaultState, action = {}) {
 }
 
 export function abrirSidebarSecundaria() {
-  return { type: abrir_secundaria, payload: 'abrir' }
+  return { type: abrirSecundaria, payload: 'abrir' }
 }
 
 export function cerrarSidebarSecundaria() {
-  return { type: abrir_secundaria, payload: 'cerrar' }
+  return { type: abrirSecundaria, payload: 'cerrar' }
 }
 
 export function toggleSidebarSecundaria() {
-  return { type: abrir_secundaria, payload: 'toggle' }
+  return { type: abrirSecundaria, payload: 'toggle' }
 }
