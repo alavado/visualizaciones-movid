@@ -78,7 +78,7 @@ const Sidebar = () => {
         </select>
       </div>
       <div className="Sidebar__contenedor_parametro">
-        <label className="Sidebar__label">Tipos de distritos</label>
+        <label className="Sidebar__label">Tipos de distritos en mapa</label>
         <label className="Sidebar__label_checkbox">
           <input
             checked={urbanosSeleccionados}

@@ -13,6 +13,7 @@ const CapaDistritos = () => {
   const { ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados } = useSelector(state => state.tiposDistritos)
   const { criterio } = useSelector(state => state.criterio)
   const propiedadGeoJSON = `movid-${criterio === criterio0326 ? 'sosp0326' : 'sosp0530'}-${semana}`
+  const { codigoDistrito: codigoDistritoSeleccionado } = useSelector(state => state.distrito)
 
   const geoJSONProcesado = useMemo(() => {
     const codigo = codigoRegion.toString()
@@ -29,33 +30,58 @@ const CapaDistritos = () => {
     }
   }, [codigoRegion, ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados])
 
+  const geoJSONDistritoSeleccionado = useMemo(() => {
+    return {
+      ...geoJSONDistritos,
+      features: geoJSONDistritos.features
+        .filter(f => Number(f.properties.CODIGO_C17) === codigoDistritoSeleccionado)
+    }
+  }, [codigoDistritoSeleccionado])
+
   return (
-    <Source
-      id="capa-datos-distritos"
-      type="geojson"
-      data={geoJSONProcesado}
-    >
-      <Layer
-        id="distritos-fill"
-        type="fill"
-        paint={{
-          "fill-opacity": 1,
-          "fill-color": {
-            property: propiedadGeoJSON,
-            stops: colores.map((color, i) => [valoresEscala[i], color])
-          }
-        }}
-      />
-      <Layer
-        id="distritos-line"
-        type="line"
-        paint={{
-          'line-color': '#a9a9a9',
-          'line-width': .75,
-          'line-dasharray': [2, 1]
-        }}
-      />
-    </Source>
+    <>
+      <Source
+        id="capa-datos-distritos"
+        type="geojson"
+        data={geoJSONProcesado}
+      >
+        <Layer
+          id="distritos-fill"
+          type="fill"
+          paint={{
+            "fill-opacity": 1,
+            "fill-color": {
+              property: propiedadGeoJSON,
+              stops: colores.map((color, i) => [valoresEscala[i], color])
+            }
+          }}
+        />
+        <Layer
+          id="distritos-line"
+          type="line"
+          paint={{
+            'line-color': '#a9a9a9',
+            'line-width': .75,
+            'line-dasharray': [2, 1]
+          }}
+        />
+      </Source>
+      <Source
+        id="capa-distrito-seleccionado"
+        type="geojson"
+        data={geoJSONDistritoSeleccionado}
+      >
+        <Layer
+          id="distrito-seleccionado-line"
+          type="line"
+          paint={{
+            'line-color': '#26304B',
+            'line-width': 3,
+            'line-dasharray': [2, 1]
+          }}
+        />
+      </Source>
+    </>
   )
 }
 
