@@ -5,6 +5,7 @@ import geoJSONDistritos from '../../data/geojson/distritos_movid.json'
 import { primeraSemana, ultimaSemana } from '../../scripts/constantesMOVID'
 import { criterio0326 } from '../../redux/ducks/criterio'
 import GraficoBarras from './GraficoBarras'
+import { obtenerNombreComuna } from '../../helpers/demografia'
 
 const OtraSidebar = () => {
 
@@ -28,7 +29,7 @@ const OtraSidebar = () => {
       }
       return sumas
     }, { total: Array(numeroSemanas).fill(0), sospechosos: Array(numeroSemanas).fill(0) })
-    let datosComuna = { total: undefined, sospechosos: undefined }
+    let datosComuna = { total: Array(numeroSemanas).fill(0), sospechosos: Array(numeroSemanas).fill(0) }
     if (codigoComuna) {
       datosComuna = distritosRegion
         .filter(d => Number(d.properties.COMUNA) === codigoComuna)
@@ -40,9 +41,9 @@ const OtraSidebar = () => {
             }
           }
           return sumas
-        }, { total: Array(numeroSemanas).fill(0), sospechosos: Array(numeroSemanas).fill(0) })
+        }, datosComuna)
     }
-    let datosDistrito = { total: undefined, sospechosos: undefined }
+    let datosDistrito = { total: Array(numeroSemanas).fill(0), sospechosos: Array(numeroSemanas).fill(0) }
     if (codigoDistrito) {
       datosDistrito = distritosRegion
         .filter(d => Number(d.properties.CODIGO_C17) === codigoDistrito)
@@ -54,7 +55,7 @@ const OtraSidebar = () => {
             }
           }
           return sumas
-        }, { total: Array(numeroSemanas).fill(0), sospechosos: Array(numeroSemanas).fill(0) })
+        }, datosDistrito)
     }
     return { datosRegion, datosComuna, datosDistrito }
   }, [codigoRegion, numeroSemanas, criterio, codigoComuna, codigoDistrito])
@@ -66,12 +67,20 @@ const OtraSidebar = () => {
         total={datosRegion.total}
         sospechosos={datosRegion.sospechosos}
       />
-      <h1 className="OtraSidebar__titulo" style={{ display: datosComuna.total ? 'block' : 'none' }}>Comuna</h1>
+      <h1
+        className="OtraSidebar__titulo"
+      >
+        Comuna de {obtenerNombreComuna(codigoComuna)}
+      </h1>
       <GraficoBarras
         total={datosComuna.total}
         sospechosos={datosComuna.sospechosos}
       />
-      <h1 className="OtraSidebar__titulo" style={{ display: datosComuna.total ? 'block' : 'none' }}>Distrito</h1>
+      <h1
+        className="OtraSidebar__titulo"
+      >
+        Distrito censal N° {codigoDistrito}
+      </h1>
       <GraficoBarras
         total={datosDistrito.total}
         sospechosos={datosDistrito.sospechosos}
