@@ -4,6 +4,7 @@ import tiposDistritos from './tiposDistritos'
 import region from './region'
 import escala from './escala'
 import criterio from './criterio'
+import distrito from './distrito'
 
 export default {
   fecha,
@@ -11,5 +12,6 @@ export default {
   region,
   tiposDistritos,
   escala,
-  criterio
+  criterio,
+  distrito
 }

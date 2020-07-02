@@ -4,10 +4,11 @@ import mapStyle from './mapStyle.json'
 import './Mapa.css'
 import CapaDistritos from './CapaDistritos'
 import CodigoColor from './CodigoColor'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import viewportsRegiones from '../../data/viewports/regiones.json'
 import { easeCubic } from 'd3-ease'
 import CapaComunas from './CapaComunas'
+import { seleccionaDistrito } from '../../redux/ducks/distrito'
 
 const Mapa = () => {
 
@@ -26,6 +27,7 @@ const Mapa = () => {
     transitionEasing: easeCubic,
     minZoom: 5
   })
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const vpRegion = viewportsRegiones.find(vp => vp.codigo === codigoRegion)
@@ -46,6 +48,13 @@ const Mapa = () => {
     })
   }
 
+  const clickEnMapa = e => {
+    const feature = e.features.find(f => f.layer.id === 'distritos-fill')
+    if (feature) {
+      dispatch(seleccionaDistrito(feature))
+    }
+  }
+
   return (
     <div className="Mapa">
       <CodigoColor />
@@ -53,6 +62,8 @@ const Mapa = () => {
         {...vp}
         mapStyle={mapStyle}
         onViewportChange={cambioEnElViewport}
+        onClick={clickEnMapa}
+        doubleClickZoom={false}
       >
         <CapaDistritos />
         <CapaComunas />
