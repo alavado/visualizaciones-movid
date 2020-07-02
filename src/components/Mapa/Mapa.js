@@ -64,6 +64,7 @@ const Mapa = () => {
         onViewportChange={cambioEnElViewport}
         onClick={clickEnMapa}
         doubleClickZoom={false}
+        getCursor={() => 'pointer'}
       >
         <CapaDistritos />
         <CapaComunas />

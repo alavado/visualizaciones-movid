@@ -1,7 +1,9 @@
 const seleccionar = 'distrito/seleccionar'
 
 const defaultState = {
-  distrito: undefined
+  codigoRegion: undefined,
+  codigoComuna: undefined,
+  codigoDistrito: undefined
 }
 
 export default function reducer(state = defaultState, action = {}) {
@@ -9,7 +11,7 @@ export default function reducer(state = defaultState, action = {}) {
     case seleccionar:
       return {
         ...state,
-        distrito: action.payload
+        ...action.payload
       }
     default: {
       return state

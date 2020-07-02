@@ -1,4 +1,3 @@
 .GraficoBarras {
-  height: 30vh;
-  margin-top: .5em;
+  flex: 1;
 }

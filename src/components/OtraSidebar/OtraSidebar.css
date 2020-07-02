@@ -3,8 +3,16 @@
   overflow: hidden;
   transition: all .25s ease-in-out;
   padding: .65em;
+  display: flex;
+  flex-direction: column;
 }
 
 .OtraSidebar--abierta {
-  width: 20em;
+  width: 25vw;
+}
+
+.OtraSidebar__titulo {
+  font-size: .65em;
+  text-transform: uppercase;
+  font-weight: 600;
 }

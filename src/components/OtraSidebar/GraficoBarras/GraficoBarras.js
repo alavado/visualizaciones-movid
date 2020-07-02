@@ -3,13 +3,11 @@ import { Bar } from 'react-chartjs-2'
 import './GraficoBarras.css'
 import { primeraSemana } from '../../../scripts/constantesMOVID'
 
-const GraficoBarras = ({ total, sospechosos }) => {
-
-  console.log(total)
+const GraficoBarras = ({ titulo, total, sospechosos }) => {
 
   return (
     <div className="GraficoBarras">
-      <Bar
+      {total && <Bar
         data={{
           labels: total.map((x, i) => `S${primeraSemana + i}`),
           datasets: [
@@ -27,6 +25,15 @@ const GraficoBarras = ({ total, sospechosos }) => {
         }}
         options={{
           maintainAspectRatio: false,
+          legend: {
+            display: false
+          },
+          layout: {
+            padding: {
+              top: 16,
+              bottom: 4
+            }
+          },
           scales: {
             xAxes: [{
               gridLines: {
@@ -35,12 +42,15 @@ const GraficoBarras = ({ total, sospechosos }) => {
               }
             }],
             yAxes: [{
-              gridLines: {
+              ticks: {
+                min: 0,
+                suggestedMin: 0,
+                suggestedMax: 10
               }
             }]
           }
         }}
-      />
+      />}
     </div>
   )
 }
