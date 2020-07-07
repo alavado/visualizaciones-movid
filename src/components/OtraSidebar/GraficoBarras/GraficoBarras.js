@@ -11,13 +11,14 @@ const GraficoBarras = ({ total, sospechosos }) => {
     <div className="GraficoBarras">
       <Line
         data={{
-          labels: total.map((x, i) => `S${primeraSemana + i}`),
+          labels: total.map((x, i) => `${primeraSemana + i}`),
           datasets: [
             {
               data: positividad,
               label: 'Positividad',
               backgroundColor: 'rgba(38, 48, 75, .8)',
               pointBackgroundColor: '#26304B',
+              lineTension: 0.1
             }
           ]
         }}
@@ -32,8 +33,22 @@ const GraficoBarras = ({ total, sospechosos }) => {
               bottom: 6
             }
           },
+          tooltips: {
+            callbacks: {
+              title: (item, data) => `Semana ${item[0].label}`,
+              label: (item, data) => (
+                `Positividad: ${Number(item.value)
+                  .toLocaleString('de-DE', { maximumFractionDigits: 1 })}%`
+              )
+            }
+          },
           scales: {
             xAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'Semana',
+                fontFamily: 'Montserrat'
+              },
               gridLines: {
                 display: false,
                 zeroLineWidth: 0
@@ -44,6 +59,11 @@ const GraficoBarras = ({ total, sospechosos }) => {
               }
             }],
             yAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: 'Positividad',
+                fontFamily: 'Montserrat'
+              },
               ticks: {
                 min: 0,
                 suggestedMin: 0,
