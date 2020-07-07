@@ -63,7 +63,7 @@ const Mapa = () => {
         mapStyle={mapStyle}
         onViewportChange={cambioEnElViewport}
         onClick={clickEnMapa}
-        doubleClickZoom={false}
+        doubleClickZoom={(() => 'ontouchstart' in window)()}
         getCursor={() => 'pointer'}
       >
         <CapaDistritos />

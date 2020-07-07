@@ -1,26 +1,24 @@
 import React from 'react'
-import { Bar } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 import './GraficoBarras.css'
 import { primeraSemana } from '../../../scripts/constantesMOVID'
 
 const GraficoBarras = ({ total, sospechosos }) => {
 
+  const positividad = total.map((v, i) => 100 * (v > 0 ? (sospechosos[i] / v) : 0))
+
   return (
     <div className="GraficoBarras">
-      <Bar
+      <Line
         data={{
           labels: total.map((x, i) => `S${primeraSemana + i}`),
           datasets: [
             {
-              data: total,
-              label: 'Encuestas recibidas',
-              backgroundColor: '#26304B'
-            },
-            {
-              data: sospechosos,
-              label: 'Casos sospechosos',
-              backgroundColor: '#7789bb'
-            },
+              data: positividad,
+              label: 'Positividad',
+              backgroundColor: 'rgba(38, 48, 75, .8)',
+              pointBackgroundColor: '#26304B',
+            }
           ]
         }}
         options={{
@@ -31,7 +29,7 @@ const GraficoBarras = ({ total, sospechosos }) => {
           layout: {
             padding: {
               top: 16,
-              bottom: 4
+              bottom: 6
             }
           },
           scales: {
@@ -49,9 +47,13 @@ const GraficoBarras = ({ total, sospechosos }) => {
               ticks: {
                 min: 0,
                 suggestedMin: 0,
-                suggestedMax: 10,
+                suggestedMax: 30,
                 fontFamily: 'Montserrat',
-                fontSize: 10
+                fontSize: 10,
+                callback: v => `${v}%`
+              },
+              gridLines: {
+                color: '#f0f0f0'
               }
             }]
           }
