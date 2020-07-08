@@ -12,7 +12,7 @@ const CapaDistritos = () => {
   const { colores, valores: valoresEscala } = useSelector(state => state.escala)
   const { ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados } = useSelector(state => state.tiposDistritos)
   const { criterio } = useSelector(state => state.criterio)
-  const propiedadGeoJSON = `movid-${criterio === criterio0326 ? 'sosp0326' : 'sosp0530'}-${semana}`
+  const propiedadGeoJSON = `movid-${criterio === criterio0326 ? 'posit0326' : 'posit0530'}-${semana}`
   const { codigoDistrito: codigoDistritoSeleccionado } = useSelector(state => state.distrito)
 
   const geoJSONProcesado = useMemo(() => {
@@ -27,9 +27,8 @@ const CapaDistritos = () => {
           (urbanosSeleccionados || f.properties.TIPO_DISTR !== 'URBANO') &&
           (mixtosSeleccionados || f.properties.TIPO_DISTR !== 'MIXTO')
         ))
-        .map(f => ({ ...f, properties: { ...f.properties, p: f.properties[`movid-obs-${semana}`] > 0 ? (100 * f.properties[propiedadGeoJSON] / f.properties[`movid-obs-${semana}`]) : -1 }}))
     }
-  }, [codigoRegion, ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados, semana, propiedadGeoJSON])
+  }, [codigoRegion, ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados])
 
   const geoJSONDistritoSeleccionado = useMemo(() => {
     return {
@@ -52,7 +51,7 @@ const CapaDistritos = () => {
           paint={{
             "fill-opacity": 1,
             "fill-color": {
-              property: 'p',
+              property: propiedadGeoJSON,
               stops: colores.map((color, i) => [valoresEscala[i], color])
             }
           }}
