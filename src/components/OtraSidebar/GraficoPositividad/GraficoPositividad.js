@@ -3,22 +3,43 @@ import { Line } from 'react-chartjs-2'
 import './GraficoPositividad.css'
 import { primeraSemana } from '../../../scripts/constantesMOVID'
 
-const GraficoPositividad = ({ total, sospechosos }) => {
-
-  const positividad = total.map((v, i) => 100 * (v > 0 ? (sospechosos[i] / v) : 0))
+const GraficoPositividad = ({ datosRegion, datosComuna, datosDistrito }) => {
 
   return (
     <div className="GraficoPositividad">
       <Line
         data={{
-          labels: total.map((x, i) => `${primeraSemana + i}`),
+          labels: datosRegion.map((x, i) => `${primeraSemana + i}`),
           datasets: [
             {
-              data: positividad,
-              label: 'Positividad',
+              data: datosRegion,
+              label: 'Región',
               borderColor: '#26304B',
               pointBackgroundColor: '#26304B',
+              pointRadius: 2,
+              borderWidth: 1.5,
               lineTension: 0.1,
+              fill: false
+            },
+            {
+              data: datosComuna,
+              label: 'Comuna',
+              borderColor: '#5C6B96',
+              pointBackgroundColor: '#5C6B96',
+              pointRadius: 2,
+              borderWidth: 1.5,
+              lineTension: 0.1,
+              fill: false
+            },
+            {
+              data: datosDistrito,
+              label: 'Distrito',
+              borderColor: '#96792F',
+              pointBackgroundColor: '#96792F',
+              pointRadius: 2,
+              borderWidth: 1.5,
+              lineTension: 0.1,
+              spanGaps: [5, 5],
               fill: false
             }
           ]
@@ -26,12 +47,7 @@ const GraficoPositividad = ({ total, sospechosos }) => {
         options={{
           maintainAspectRatio: false,
           legend: {
-            display: false
-          },
-          layout: {
-            padding: {
-              top: 16
-            }
+            display: true
           },
           tooltips: {
             callbacks: {

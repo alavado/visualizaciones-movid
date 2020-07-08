@@ -9,7 +9,9 @@
   right: .75em;
   top: .75em;
   background-color: white;
-  height: 15.75vw;
+  height: 20vw;
+  border-radius: .15em;
+  box-shadow: 0 .15em .15em rgba(0, 0, 0, .1);
 }
 
 .OtraSidebar--abierta {

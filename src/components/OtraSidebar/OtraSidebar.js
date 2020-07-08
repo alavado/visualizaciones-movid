@@ -64,27 +64,10 @@ const OtraSidebar = () => {
     <div className={`OtraSidebar${sidebarSecundariaAbierta ? ' OtraSidebar--abierta' : ''}`}>
       <h1 className="OtraSidebar__titulo">Positividad</h1>
       <GraficoPositividad
-        total={datosRegion.total}
-        sospechosos={datosRegion.sospechosos}
+        datosRegion={datosRegion.total.map((v, i) => 100 * (v > 0 ? (datosRegion.sospechosos[i] / v) : 0))}
+        datosComuna={datosComuna.total.map((v, i) => 100 * (v > 0 ? (datosComuna.sospechosos[i] / v) : 0))}
+        datosDistrito={datosDistrito.total.map((v, i) => 100 * (v > 0 ? (datosDistrito.sospechosos[i] / v) : 0))}
       />
-      {/* <h1
-        className="OtraSidebar__titulo"
-      >
-        Comuna de {obtenerNombreComuna(codigoComuna)}
-      </h1> */}
-      {/* <GraficoBarras
-        total={datosComuna.total}
-        sospechosos={datosComuna.sospechosos}
-      />
-      <h1
-        className="OtraSidebar__titulo"
-      >
-        Distrito censal N° {codigoDistrito}
-      </h1>
-      <GraficoBarras
-        total={datosDistrito.total}
-        sospechosos={datosDistrito.sospechosos}
-      /> */}
     </div>
   )
 }
