@@ -41,7 +41,7 @@ fs.readFile('../data/movid/movid19_freq_c17.csv', (err, data) => {
               ...obj,
               [`movid-obs-${d.semana}`]: d.obs_cnt,
               [`movid-sosp0326-${d.semana}`]: d.sosp_minsal0326,
-              [`movid-sosp0530-${d.semana}`]: d.sosp_minsal0530,
+              [`movid-sosp0530-${d.semana}`]: d.sosp_minsal0530
             }), {})
         }
       }))

@@ -1,2 +1,4 @@
-export const primeraSemana = 18
-export const ultimaSemana = 23
+module.exports = {
+  primeraSemana: 18,
+  ultimaSemana: 23
+}
