@@ -1,9 +1,2 @@
-Visualizaciones para movid.cl
-
-Proyecto [Create React App](https://github.com/facebook/create-react-app).
-
-Para ejecutar en modo desarrollo:
-
-### `yarn start`
-
-Pregunta JT: Hay distritos que aparecen en varias comunas, por ejemplo: 1310608
+todo
+no funciona el script y hay poner la positividad directamente en el geojson

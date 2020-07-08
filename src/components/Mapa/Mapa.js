@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
+import ReactMapGL, { FlyToInterpolator, NavigationControl } from 'react-map-gl'
 import mapStyle from './mapStyle.json'
 import './Mapa.css'
 import CapaDistritos from './CapaDistritos'
@@ -66,6 +66,9 @@ const Mapa = () => {
         doubleClickZoom={(() => 'ontouchstart' in window)()}
         getCursor={() => 'pointer'}
       >
+        <div style={{ position: 'absolute', top: '.75em', left: '10.25em' }}>
+          <NavigationControl showCompass={false} />
+        </div>
         <CapaDistritos />
         <CapaComunas />
       </ReactMapGL>

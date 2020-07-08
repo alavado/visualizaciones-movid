@@ -28,4 +28,5 @@ body {
 .App__contenedor_mapa {
   display: flex;
   flex: 1;
+  position: relative;
 }

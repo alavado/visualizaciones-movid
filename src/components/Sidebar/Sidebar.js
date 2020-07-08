@@ -44,6 +44,10 @@ const Sidebar = () => {
         </select>
       </div>
       <div className="Sidebar__contenedor_parametro">
+        <label className="Sidebar__label">Comuna</label>
+        <input type="text" />
+      </div>
+      <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Semana epidemiológica</label>
         <div className="Sidebar__semana">
           Semana {semana}: {fechaInicioSemana} – {fechaTerminoSemana}

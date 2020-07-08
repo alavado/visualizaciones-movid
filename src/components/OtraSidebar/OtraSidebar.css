@@ -5,10 +5,15 @@
   padding: .65em;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  right: .75em;
+  top: .75em;
+  background-color: white;
+  height: 15.75vw;
 }
 
 .OtraSidebar--abierta {
-  width: 25vw;
+  width: 27vw;
 }
 
 .OtraSidebar__titulo {

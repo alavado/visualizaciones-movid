@@ -9,7 +9,7 @@ const CodigoColor = () => {
 
   return (
     <div className="CodigoColor">
-      <h2 className="CodigoColor__titulo">Casos sospechosos</h2>
+      <h2 className="CodigoColor__titulo">Positividad</h2>
       <h3 className="CodigoColor__criterio">{criterio}</h3>
       {colores.map((color, i) => (
         <div
@@ -21,7 +21,7 @@ const CodigoColor = () => {
             style={{ backgroundColor: color }}
           />
           <div className="CodigoColor__valor">
-            {i === 0 ? 'Sin datos' : valores[i]}
+            {i === 0 ? 'Sin datos' : `${valores[i]}%`}
           </div>
         </div>
       ))}

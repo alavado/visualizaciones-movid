@@ -27,8 +27,9 @@ const CapaDistritos = () => {
           (urbanosSeleccionados || f.properties.TIPO_DISTR !== 'URBANO') &&
           (mixtosSeleccionados || f.properties.TIPO_DISTR !== 'MIXTO')
         ))
+        .map(f => ({ ...f, properties: { ...f.properties, p: f.properties[`movid-obs-${semana}`] > 0 ? (100 * f.properties[propiedadGeoJSON] / f.properties[`movid-obs-${semana}`]) : -1 }}))
     }
-  }, [codigoRegion, ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados])
+  }, [codigoRegion, ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados, semana, propiedadGeoJSON])
 
   const geoJSONDistritoSeleccionado = useMemo(() => {
     return {
@@ -51,7 +52,7 @@ const CapaDistritos = () => {
           paint={{
             "fill-opacity": 1,
             "fill-color": {
-              property: propiedadGeoJSON,
+              property: 'p',
               stops: colores.map((color, i) => [valoresEscala[i], color])
             }
           }}

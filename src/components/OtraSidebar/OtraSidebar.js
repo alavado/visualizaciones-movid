@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import geoJSONDistritos from '../../data/geojson/distritos_movid.json'
 import { primeraSemana, ultimaSemana } from '../../scripts/constantesMOVID'
 import { criterio0326 } from '../../redux/ducks/criterio'
-import GraficoBarras from './GraficoBarras'
+import GraficoPositividad from './GraficoPositividad'
 import { obtenerNombreComuna } from '../../helpers/demografia'
 
 const OtraSidebar = () => {
@@ -62,17 +62,17 @@ const OtraSidebar = () => {
 
   return (
     <div className={`OtraSidebar${sidebarSecundariaAbierta ? ' OtraSidebar--abierta' : ''}`}>
-      <h1 className="OtraSidebar__titulo">{nombreRegion}</h1>
-      <GraficoBarras
+      <h1 className="OtraSidebar__titulo">Positividad</h1>
+      <GraficoPositividad
         total={datosRegion.total}
         sospechosos={datosRegion.sospechosos}
       />
-      <h1
+      {/* <h1
         className="OtraSidebar__titulo"
       >
         Comuna de {obtenerNombreComuna(codigoComuna)}
-      </h1>
-      <GraficoBarras
+      </h1> */}
+      {/* <GraficoBarras
         total={datosComuna.total}
         sospechosos={datosComuna.sospechosos}
       />
@@ -84,7 +84,7 @@ const OtraSidebar = () => {
       <GraficoBarras
         total={datosDistrito.total}
         sospechosos={datosDistrito.sospechosos}
-      />
+      /> */}
     </div>
   )
 }

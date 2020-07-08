@@ -34,6 +34,8 @@ fs.readFile('../data/movid/movid19_freq_c17.csv', (err, data) => {
               [`movid-obs-${i + primeraSemana}`]: -1,
               [`movid-sosp0326-${i + primeraSemana}`]: -1,
               [`movid-sosp0530-${i + primeraSemana}`]: -1,
+              [`movid-posit0326-${i + primeraSemana}`]: -1,
+              [`movid-posit0530-${i + primeraSemana}`]: -1
             }), {}),
           ...datosMOVID
             .filter(d => d.codigoDistrito === feature.properties.CODIGO_C17)
@@ -41,7 +43,9 @@ fs.readFile('../data/movid/movid19_freq_c17.csv', (err, data) => {
               ...obj,
               [`movid-obs-${d.semana}`]: d.obs_cnt,
               [`movid-sosp0326-${d.semana}`]: d.sosp_minsal0326,
-              [`movid-sosp0530-${d.semana}`]: d.sosp_minsal0530
+              [`movid-sosp0530-${d.semana}`]: d.sosp_minsal0530,
+              [`movid-posit0326-${d.semana}`]: d.obs_cnt > 0 ? (100 * d.sosp_minsal0326 / d.obs_cnt) : -1,
+              [`movid-posit0530-${d.semana}`]: d.obs_cnt > 0 ? (100 * d.sosp_minsal0530 / d.obs_cnt) : -1
             }), {})
         }
       }))
