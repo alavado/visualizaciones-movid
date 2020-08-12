@@ -15,8 +15,8 @@ const Sidebar = () => {
 
   const { codigoRegion } = useSelector(state => state.region)
   const { criterio } = useSelector(state => state.criterio)
-  const { ruralesSeleccionados, urbanosSeleccionados, mixtosSeleccionados } = useSelector(state => state.tiposDistritos)
   const { semana } = useSelector(state => state.fecha)
+  const { codigoComuna } = useSelector(state => state.distrito)
   const fechaInicio = moment('2019-12-29').add(semana - 1, 'weeks')
   const fechaInicioSemana = fechaInicio.format('DD/MM')
   const fechaTerminoSemana = fechaInicio.add(6, 'days').format('DD/MM')
@@ -24,7 +24,7 @@ const Sidebar = () => {
 
   return (
     <div className="Sidebar">
-      <h1 className="Sidebar__titulo">Parámetros</h1>
+      {/* <h1 className="Sidebar__titulo">Parámetros</h1> */}
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Región</label>
         <select
@@ -45,7 +45,7 @@ const Sidebar = () => {
       </div>
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Comuna</label>
-        <input type="text" />
+        <input type="text" value={codigoComuna} />
       </div>
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Semana epidemiológica</label>
@@ -81,7 +81,7 @@ const Sidebar = () => {
           </option>
         </select>
       </div>
-      <div className="Sidebar__contenedor_parametro">
+      {/* <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Tipos de distritos en mapa</label>
         <label className="Sidebar__label_checkbox">
           <input
@@ -107,7 +107,7 @@ const Sidebar = () => {
           />
             Mixtos
         </label>
-      </div>
+      </div> */}
     </div>
   )
 }

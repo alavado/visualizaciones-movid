@@ -1,11 +1,10 @@
 .Header {
-  background-color: #26304b;
-  color: rgba(255, 255, 255, .95);
-  padding: .65em;
+  background-color: #FFFFFF;
+  color: #212529;
+  padding: .75rem 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,.125);
 }
 
 .Header__titulo {
-  text-transform: uppercase;
-  font-size: .85em;
-  font-weight: 600;
+  font-size: 1rem;
 }

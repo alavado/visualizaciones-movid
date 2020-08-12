@@ -27,8 +27,8 @@ const CapaComunas = () => {
         id="comunas-line"
         type="line"
         paint={{
-          'line-color': '#545454',
-          'line-width': .85
+          'line-color': '#424242',
+          'line-width': 1
         }}
       />
     </Source>

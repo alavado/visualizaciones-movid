@@ -1,17 +1,43 @@
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #F4F6F9;
 }
 
 .App {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 1rem;
+  border: 1px solid rgba(0,0,0,.125);
+  border-top-color: rgba(0, 0, 0, 0.125);
+  border-top-style: solid;
+  border-top-width: 0px;
+  border-right-color: rgba(0, 0, 0, 0.125);
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-bottom-color: rgba(0, 0, 0, 0.125);
+  border-bottom-style: solid;
+  border-bottom-width: 0px;
+  border-left-color: rgba(0, 0, 0, 0.125);
+  border-left-style: solid;
+  border-left-width: 0px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  border-radius: .25rem;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);
 }
 
 .App__contenedor_principal {

@@ -1,7 +1,7 @@
 .Sidebar {
   width: 12em;
-  background-color: #202a40;
-  color: rgba(255, 255, 255, .95);
+  background-color: white;
+  color: #212529;
   padding: .75em 1.3em .65em .65em;
 }
 
@@ -11,7 +11,7 @@
   text-transform: uppercase;
   margin-bottom: 1.5em;
   line-height: 1.25;
-  color: rgba(255, 255, 255, .9);
+  color: #212529;
 }
 
 .Sidebar__contenedor_parametro {
@@ -26,18 +26,17 @@
 }
 
 .Sidebar__label {
-  font-size: .6em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, .65);
+  font-size: .8em;
+  color: #212529;
   font-weight: 600;
   margin-bottom: .75em;
 }
 
 .Sidebar__selector {
   padding: .25em;
-  font-size: .7em;
-  background-color: #202a40;
-  color: rgba(255, 255, 255, .95);
+  font-size: .8em;
+  background-color: #fff;
+  color: #212529;
   margin-top: .25em;
   border-radius: .25em;
   cursor: pointer;
@@ -45,13 +44,13 @@
 }
 
 .Sidebar__opcion {
-  background-color: #202a40;
-  color: rgba(255, 255, 255, .95);
+  background-color: #fff;
+  color: #212529;
 }
 
 .Sidebar__label_checkbox {
   font-size: .7em;
-  color: rgba(255, 255, 255, .95);
+  color: #212529;
   font-weight: 600;
   margin-bottom: .25em;
   display: flex;
