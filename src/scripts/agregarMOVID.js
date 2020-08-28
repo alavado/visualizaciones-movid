@@ -12,9 +12,9 @@ fs.readFile('../data/movid/movid19_freq_c17.csv', (err, data) => {
     .map(linea => {
       const datos = linea.split(',')
       return {
-        codigoComuna: datos[1].slice(1, -1),
-        codigoDistrito: datos[2].slice(1, -1),
-        semana: Number(datos[3].slice(1, -1)),
+        codigoComuna: datos[1],
+        codigoDistrito: datos[2],
+        semana: Number(datos[3]),
         sosp_minsal0326: Number(datos[4]),
         sosp_minsal0530: Number(datos[5]),
         obs_cnt: Number(datos[6])

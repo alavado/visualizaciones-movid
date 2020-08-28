@@ -1,4 +1,4 @@
 module.exports = {
   primeraSemana: 18,
-  ultimaSemana: 23
+  ultimaSemana: 34
 }
