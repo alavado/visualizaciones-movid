@@ -43,10 +43,10 @@ const Sidebar = () => {
           ))}
         </select>
       </div>
-      <div className="Sidebar__contenedor_parametro">
+      {/* <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Comuna</label>
         <input type="text" value={codigoComuna} />
-      </div>
+      </div> */}
       <div className="Sidebar__contenedor_parametro">
         <label className="Sidebar__label">Semana epidemiológica</label>
         <div className="Sidebar__semana">
